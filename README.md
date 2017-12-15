@@ -5,7 +5,7 @@ HongYan-homework
     <html lang="en"  >  
     <head>  
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>  
-        <title>ajax</title>  
+        <title>第六次作业</title>  
         
         <script type="text/javascript">  
             function getWeather(){  
