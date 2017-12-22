@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第七次作业</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function map(array, func)
+		{  
+	  		var res = [];  
+	 	 	for (var i = 0, len = array.length; i < len; i++) 
+	 	 	{  
+	    		res.push(func(array[i]));  
+	  		}  
+	  		return res;  
+		}  
+		var res = map([1, 2, 3], function(n)
+		{  
+  			return n + 3;  
+		});  
+		console.log(res);
+	</script>
+
+	<script type="text/javascript">
+		function reduce(array, func, initialValue)
+		{  
+	  		var result = initialValue;  
+	  		for(var i = 0, len = array.length; i < len; i++)
+	  		{  
+		    	result = func.apply(null, [result].concat(array[i]));  
+	  		}  
+  			return result;  
+		}  
+		var res = reduce([1, 2, 3], function(previousValue, currentValue)
+		{  
+  			return previousValue + currentValue;  
+		}, 0);  
+		console.log(res);
+	</script>
+
+	<script type="text/javascript">
+		function forEach(array, func)
+		{  
+      		for (var i = 0, len = array.length; i < len; i++) 
+      		{  
+	        	func(array[i]);  
+	      	}  
+    	}  
+    	forEach([1, 2, 3], function(n)
+    	{  
+      		console.log(n);
+    	});  
+	</script>
+
+	<script type="text/javascript">
+		function isBigEnough(element, index, array) 
+		{
+  			return (element >= 10);
+		}
+		var passed = [2, 5, 8, 1, 4].some(isBigEnough);
+		passed = [12, 5, 8, 1, 4].some(isBigEnough);
+	</script>
+
+	<script type="text/javascript">
+		function filter(array, func)
+		{  
+	  		var res = [];  
+	  		for(var i = 0, len = array.length; i < len; i++)
+		  	{  
+		    	if(typeof func(array[i]) !== 'undefined')
+		    	{  
+		      		res.push(array[i]);  
+		    	}  
+  			}  
+  			return res;  
+		}  
+		var res = filter([1, 2, 3], function(n)
+		{  
+	  		if(n % 2 == 1)
+	  		{  
+		   		return n;  
+		  	}  
+		});  
+		console.log(res);
+	</script>
+</body>
+</html>
